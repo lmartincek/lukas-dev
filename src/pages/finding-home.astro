@@ -3,6 +3,13 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Lukas Martincek">
+    <div id="map-overlay" style="display: none"
+         class="fixed z-[1000] flex justify-center items-center inset-0 bg-black/50 backdrop-blur-sm sm:top-10 sm:right-10 sm:inset-auto sm:bg-transparent sm:backdrop-blur-0">
+        <div class="maps-content-overlay bg-white w-[320px] max-h-[400px] p-5 rounded-lg text-left overflow-y-auto relative shadow-2xl">
+            <div id="close-overlay" class="absolute top-4 right-4 cursor-pointer z-10">X</div>
+            <div id="map-content" class="maps-content"/>
+        </div>
+    </div>
     <main>
         <h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
             Finding home

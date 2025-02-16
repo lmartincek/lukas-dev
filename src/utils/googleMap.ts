@@ -1,62 +1,83 @@
- async function initMap() {
+interface ILocation {
+    id: number,
+    position: GeoCoordinates,
+    title: string,
+    getContent: () => string | HTMLElement
+}
+
+interface GeoCoordinates {
+    lat: number,
+    lng: number,
+}
+
+const locations: ILocation[] = [
+    {
+        id: 1,
+        position: {
+            lat: 45.840196,
+            lng: 15.964331
+        },
+        title: "Zagreb",
+        getContent: () => `
+            <h3 class="text-primary text-xl">zagreb</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Zagreb_%2829255640143%29.jpg/640px-Zagreb_%2829255640143%29.jpg" style="width:100%;" alt="Image">
+            <p>A more detailed info window with an image.</p>
+        `
+    },
+    {
+        id: 2,
+        position: {
+            lat: 48.1486,
+            lng: 17.1077
+        },
+        title: "Bratislava",
+        getContent: () => `
+            <h3 class="text-primary text-xl">bratislava</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
+            <p>A more detailed info window with an image.</p>
+        `
+    }
+]
+
+async function initMap() {
     // Request needed libraries.
-    const { Map, InfoWindow } = await google.maps.importLibrary("maps");
-    const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
     const map = new Map(document.getElementById("map") as HTMLElement, {
-        zoom: 12,
-        center: { lat: 34.84555, lng: -111.8035 },
-        mapId: '4504f8b37365c3d0',
+        zoom: 4,
+        center: { lat: 48.765587, lng: 19.092877 },
+        mapId: 'map',
+        fullscreenControl: false,
+        streetViewControl: false,
+        mapTypeControl: false,
     });
 
-    // Set LatLng and title text for the markers. The first marker (Boynton Pass)
-    // receives the initial focus when tab is pressed. Use arrow keys to move
-    // between markers; press tab again to cycle through the map controls.
-    const tourStops = [
-        {
-            position: { lat: 34.8791806, lng: -111.8265049 },
-            title: "Boynton Pass"
-        },
-        {
-            position: { lat: 34.8559195, lng: -111.7988186 },
-            title: "Airport Mesa"
-        },
-        {
-            position: { lat: 34.832149, lng: -111.7695277 },
-            title: "Chapel of the Holy Cross"
-        },
-        {
-            position: { lat: 34.823736, lng: -111.8001857 },
-            title: "Red Rock Crossing"
-        },
-        {
-            position: { lat: 34.800326, lng: -111.7665047 },
-            title: "Bell Rock"
-        },
-    ];
+    const closeBtn = document.getElementById('close-overlay')
+    const mapOverlay = document.getElementById('map-overlay')
+    const mapContent = document.getElementById('map-content')
 
-    // Create an info window to share between markers.
-    const infoWindow = new InfoWindow();
+    closeBtn.addEventListener('click', () => {
+        mapContent.innerHTML = "";
+        mapOverlay.style.display = "none"
+    })
 
     // Create the markers.
-    tourStops.forEach(({position, title}, i) => {
-        const pin = new PinElement({
-            glyph: `${i + 1}`,
-            scale: 1.5,
-        });
+    locations.forEach(({id, position, title, getContent}) => {
+        const beachFlagImg = document.createElement('img');
+        beachFlagImg.src = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        beachFlagImg.ariaLabel = `marker-${title}`
+
         const marker = new AdvancedMarkerElement({
             position,
             map,
-            title: `${i + 1}. ${title}`,
-            content: pin.element,
-            gmpClickable: true,
+            content: beachFlagImg,
         });
+
         // Add a click listener for each marker, and set up the info window.
-        marker.addListener('click', ({ domEvent, latLng }) => {
-            const { target } = domEvent;
-            infoWindow.close();
-            infoWindow.setContent(marker.title);
-            infoWindow.open(marker.map, marker);
+        marker.addListener('click', () => {
+            mapContent.innerHTML = getContent()
+            mapOverlay.style.display = "flex"
         });
     });
 }
