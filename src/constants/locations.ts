@@ -19,13 +19,13 @@ export const locations: ILocation[] = [
             lng: -25.6756
         },
         title: "Azores",
-        year: "2023-2024",
+        year: "July 2022 - October 2022",
         getContent: function (title, year) {
             return `
                 <h3 class="text-primary text-xl">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Zagreb_%2829255640143%29.jpg/640px-Zagreb_%2829255640143%29.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -35,14 +35,14 @@ export const locations: ILocation[] = [
             lat: 48.1486,
             lng: 17.1077
         },
-        year: "2023-2024",
-        title: "Bratislava",
+        year: "1996 - xxxx",
+        title: "Slovakia",
         getContent: function (title, year) {
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -53,13 +53,13 @@ export const locations: ILocation[] = [
             lng: 100.9925,
         },
         title: "Thailand",
-        year: "2023-2024",
+        year: "2022 - 2024",
         getContent: function (title, year) {
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -70,13 +70,13 @@ export const locations: ILocation[] = [
             lng: 108.2772,
         },
         title: "Vietnam",
-        year: "2023-2024",
+        year: "2023",
         getContent: function (title, year) {
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -92,8 +92,8 @@ export const locations: ILocation[] = [
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -109,8 +109,8 @@ export const locations: ILocation[] = [
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -126,8 +126,8 @@ export const locations: ILocation[] = [
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -143,8 +143,8 @@ export const locations: ILocation[] = [
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     },
@@ -155,13 +155,13 @@ export const locations: ILocation[] = [
             lng: -107.2903,
         },
         title: "USA, Wyoming",
-        year: "2018-2019",
+        year: "2018 - 2019",
         getContent: function (title, year) {
             return `
                 <h3 class="text-primary text-xl pb-2">${title}</h3>
                 <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Slovakia_bratislava.jpg/800px-Slovakia_bratislava.jpg" style="width:100%;" alt="Image">
-                <p>A more detailed info window with an image.</p>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
             `
         }
     }
