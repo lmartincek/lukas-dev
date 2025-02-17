@@ -164,5 +164,22 @@ export const locations: ILocation[] = [
                 <p>Story to be told soon...</p>
             `
         }
+    },
+    {
+        id: 10,
+        position: {
+            lat: 64.9631,
+            lng: -19.0208,
+        },
+        title: "Iceland",
+        year: "August 2023",
+        getContent: function (title, year) {
+            return `
+                <h3 class="text-primary text-xl pb-2">${title}</h3>
+                <h4 class="text-sm py-2">${year}</h4>
+                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
+                <p>Story to be told soon...</p>
+            `
+        }
     }
 ]

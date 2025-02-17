@@ -2,6 +2,7 @@
 const currentPath = Astro.url.pathname;
 const isHomePage = currentPath === "/";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
+import { IoMdGlobe } from "react-icons/io";
 ---
 
 <nav class="flex items-center justify-between pb-8 tracking-tight">
@@ -26,11 +27,12 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
             )
         }
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2">
         <a
                 href="/finding-home"
                 target="_self"
                 class="underline-offset-4 transition duration-150 ease-in-out hover:text-primary hover:underline">
+            <IoMdGlobe className="-mt-1 inline-block"/>
             finding home
         </a>
     </div>

@@ -7,7 +7,7 @@ async function initMap() {
 
     const map = new Map(document.getElementById("map") as HTMLElement, {
         zoom: 2,
-        center: { lat: 35, lng: 20 },
+        center: { lat: 35, lng: 5 },
         mapId: 'map',
         fullscreenControl: false,
         streetViewControl: false,
