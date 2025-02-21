@@ -1,14 +1,46 @@
-interface ILocation {
-    id: number,
-    position: GeoCoordinates,
-    title: string,
-    year: string,
-    getContent: (title: string, year: string) => string | HTMLElement
-}
+import {escapeHtml} from "../utils/sanitizeHelper.ts";
 
 interface GeoCoordinates {
     lat: number,
     lng: number,
+}
+interface IPhoto {
+    img: string,
+    label: string,
+    alt: string,
+}
+export interface ILocation {
+    id: number,
+    position: GeoCoordinates,
+    title: string,
+    year: string,
+    photos: IPhoto[],
+    getContent: (title: string, year: string, photos: IPhoto[]) => string,
+}
+
+function getContentLayer(title: string, year: string, photos: IPhoto[]): string {
+    return `
+        <h3 class="text-primary text-xl">${title}</h3>
+        <h4 class="text-sm font-bold my-2">${year}</h4>
+        
+        <p class="text-sm mb-5">Story to be told soon...</p>
+        
+        <h3 class="font-serif text-[1.25rem] tracking-widest mb-2">MEMORIES</h3>
+        
+        ${photos.map(({ img, alt, label }) => `
+            <figure class="overflow-hidden shadow-md mb-5">
+                <img 
+                    src="${escapeHtml(img)}" 
+                    alt="${escapeHtml(alt)}"
+                    class="w-full object-cover" 
+                    loading="lazy"
+                />
+                <figcaption class="text-center text-sm py-2">
+                    ${escapeHtml(label)}
+                </figcaption>
+            </figure>
+        `).join('')}
+    `
 }
 
 export const locations: ILocation[] = [
@@ -20,13 +52,25 @@ export const locations: ILocation[] = [
         },
         title: "Azores",
         year: "July 2022 - October 2022",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -37,13 +81,25 @@ export const locations: ILocation[] = [
         },
         year: "1996 - xxxx",
         title: "Slovakia",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -54,13 +110,25 @@ export const locations: ILocation[] = [
         },
         title: "Thailand",
         year: "2022 - 2024",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -71,13 +139,25 @@ export const locations: ILocation[] = [
         },
         title: "Vietnam",
         year: "2023",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -88,13 +168,25 @@ export const locations: ILocation[] = [
         },
         title: "Vanuatu",
         year: "Feb 2024",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -105,13 +197,25 @@ export const locations: ILocation[] = [
         },
         title: "Sri Lanka",
         year: "Feb 2022 - May 2022",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -122,13 +226,25 @@ export const locations: ILocation[] = [
         },
         year: "October 2023",
         title: "India",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -139,13 +255,25 @@ export const locations: ILocation[] = [
         },
         title: "Guatemala",
         year: "June 2024",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -156,13 +284,25 @@ export const locations: ILocation[] = [
         },
         title: "USA, Wyoming",
         year: "2018 - 2019",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     },
     {
@@ -173,13 +313,25 @@ export const locations: ILocation[] = [
         },
         title: "Iceland",
         year: "August 2023",
-        getContent: function (title, year) {
-            return `
-                <h3 class="text-primary text-xl pb-2">${title}</h3>
-                <h4 class="text-sm py-2">${year}</h4>
-                <img src="https://placehold.co/600x400" style="width:100%;" alt="Image">
-                <p>Story to be told soon...</p>
-            `
+        photos: [
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo1 - blablabla',
+                alt: 'photo1',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo2 - blablabla',
+                alt: 'photo2',
+            },
+            {
+                img: 'https://placehold.co/600x400',
+                label: 'photo3 - blablabla',
+                alt: 'photo3',
+            }
+        ],
+        getContent: function (title: string, year: string, photos: IPhoto[]): string {
+            return getContentLayer(title, year, photos)
         }
     }
 ]
