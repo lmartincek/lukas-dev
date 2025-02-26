@@ -80,5 +80,10 @@ const apiKey = import.meta.env.GOOGLE_API_KEY
 			// Add other bootstrap parameters as needed, using camel case.
 		});
 	</script>
+
+	<script is:inline define:vars={{apiKey}}>
+		console.info('info')
+		console.info(apiKey, 'apikey')
+	</script>
 	</body>
 </html>
