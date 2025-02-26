@@ -28,7 +28,7 @@ const NowTime: React.FC = () => {
             }
         };
 
-        fetchLocationAndTime();
+        fetchLocationAndTime().then();
     }, []);
 
     const renderSvg = () => {
@@ -36,7 +36,7 @@ const NowTime: React.FC = () => {
             case "morning":
                 return (
                     <img
-                        src="/src/assets/daytime-icons/morning.svg"
+                        src="/daytime-icons/morning.svg"
                         alt="Morning Icon"
                         width={12}
                         height={12}
@@ -45,7 +45,7 @@ const NowTime: React.FC = () => {
             case "afternoon":
                 return (
                     <img
-                        src="/src/assets/daytime-icons/afternoon.svg"
+                        src="/daytime-icons/afternoon.svg"
                         alt="Afternoon Icon"
                         width={12}
                         height={13}
@@ -54,7 +54,7 @@ const NowTime: React.FC = () => {
             case "evening":
                 return (
                     <img
-                        src="/src/assets/daytime-icons/evening.svg"
+                        src="/daytime-icons/evening.svg"
                         alt="Evening Icon"
                         width={12}
                         height={13}
@@ -63,7 +63,7 @@ const NowTime: React.FC = () => {
             case "night":
                 return (
                     <img
-                        src="/src/assets/daytime-icons/night.svg"
+                        src="/daytime-icons/night.svg"
                         alt="Night Icon"
                         width={12}
                         height={12}

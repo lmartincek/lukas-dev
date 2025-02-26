@@ -1,10 +1,9 @@
-import {escapeHtml} from "../utils/sanitizeHelper.ts";
-
 interface GeoCoordinates {
     lat: number,
     lng: number,
 }
-interface IPhoto {
+
+export interface IPhoto {
     img: string,
     label: string,
     alt: string,
@@ -15,32 +14,6 @@ export interface ILocation {
     title: string,
     year: string,
     photos: IPhoto[],
-    getContent: (title: string, year: string, photos: IPhoto[]) => string,
-}
-
-function getContentLayer(title: string, year: string, photos: IPhoto[]): string {
-    return `
-        <h3 class="text-primary text-xl">${title}</h3>
-        <h4 class="text-sm font-bold my-2">${year}</h4>
-        
-        <p class="text-sm mb-5">Story to be told soon...</p>
-        
-        <h3 class="font-serif text-[1.25rem] tracking-widest mb-2">MEMORIES</h3>
-        
-        ${photos.map(({ img, alt, label }) => `
-            <figure class="overflow-hidden shadow-md mb-5">
-                <img 
-                    src="${escapeHtml(img)}" 
-                    alt="${escapeHtml(alt)}"
-                    class="w-full object-cover" 
-                    loading="lazy"
-                />
-                <figcaption class="text-center text-sm py-2">
-                    ${escapeHtml(label)}
-                </figcaption>
-            </figure>
-        `).join('')}
-    `
 }
 
 export const locations: ILocation[] = [
@@ -69,9 +42,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 2,
@@ -98,9 +68,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 3,
@@ -127,9 +94,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 4,
@@ -156,9 +120,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 5,
@@ -185,9 +146,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 6,
@@ -214,9 +172,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 7,
@@ -243,9 +198,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 8,
@@ -272,9 +224,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 9,
@@ -301,9 +250,6 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     },
     {
         id: 10,
@@ -330,8 +276,5 @@ export const locations: ILocation[] = [
                 alt: 'photo3',
             }
         ],
-        getContent: function (title: string, year: string, photos: IPhoto[]): string {
-            return getContentLayer(title, year, photos)
-        }
     }
 ]

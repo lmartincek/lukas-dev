@@ -1,15 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Map from "../components/Map.astro";
 ---
 
 <Layout title="Lukas Martincek">
-    <div id="map-overlay" style="display: none"
-         class="fixed z-[1000] flex justify-center items-center inset-0 bg-black/50 backdrop-blur-sm sm:top-10 sm:right-10 sm:inset-auto sm:bg-transparent sm:backdrop-blur-0">
-        <div class="maps-content-overlay bg-white w-[320px] md:w-[360px] max-h-[400px] p-5 rounded-lg text-left overflow-y-auto relative shadow-2xl">
-            <div id="close-overlay" class="absolute top-4 right-4 cursor-pointer z-10">X</div>
-            <div id="map-content" class="maps-content"/>
-        </div>
-    </div>
     <main>
         <h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
             Finding home
@@ -23,11 +17,6 @@ import Layout from "../layouts/Layout.astro";
             - Sherry Turkle
         </p>
 
-        <section class="pt-8">
-            <h2 class="font-medium tracking-tight text-title">Map</h2>
-            <div class="pt-1.5">
-                <div id="map" class="h-96 w-full"></div>
-            </div>
-        </section>
+        <Map/>
     </main>
 </Layout>
