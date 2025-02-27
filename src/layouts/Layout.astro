@@ -1,14 +1,15 @@
 ---
-import {AstroFont}  from "astro-font";
+import { AstroFont }  from "astro-font";
 import Footer from "../components/Footer.astro";
 import Metadata from "../components/Metadata.astro";
 import Nav from "../components/Nav.astro";
 
+type maxBodyWidth = 'md:max-w-[1100px]' | 'md:max-w-[850px]'
 interface Props {
 	title: string;
-	maxContainerWidth: string;
+	maxBodyWidth: maxBodyWidth;
 }
-const { title, maxContainerWidth } = Astro.props;
+const { title, maxBodyWidth } = Astro.props;
 ---
 
 <!doctype html>
@@ -65,7 +66,7 @@ const { title, maxContainerWidth } = Astro.props;
 	/>
 </head>
 <body
-	class=`mx-auto my-8 max-w-[400px] px-4 font-sans text-body selection:bg-primary selection:text-hoverColor md:my-16 md:px-36 md:max-w-[${maxContainerWidth}px]`>
+	class=`mx-auto my-8 max-w-[400px] px-4 font-sans text-body selection:bg-primary selection:text-hoverColor md:my-16 md:px-36 ${maxBodyWidth}`>
 	<Nav />
 	<slot />
 	<Footer />

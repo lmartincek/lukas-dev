@@ -18,5 +18,9 @@ export default {
             },
         },
     },
+    safelist: [
+        'md:max-w-[850px]',
+        'md:max-w-[1100px]',
+    ],
     plugins: [require("@tailwindcss/typography")],
 };
