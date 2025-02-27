@@ -7,25 +7,24 @@ import projectsData from "../constants/projects.json";
 import ProjectCard from "../components/react/Card.tsx";
 import socialsData from "../constants/socials.json";
 
+import {author} from "../constants/general";
 
 const projects = projectsData;
 const socials = socialsData;
-
-const title = 'Lukas Martincek'
 ---
 
-<Layout title={title} maxBodyWidth="md:max-w-[850px]">
+<Layout title={author} maxBodyWidth="md:max-w-[850px]">
 	<main>
 		<h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
-			{title}
+			{author}
 		</h1>
 		<div class="flex items-center gap-1.5 font-medium tracking-tight">
-			<h2 class="text-base text-title hover:text-primary transition duration-300">
-				<a href="https://github.com/lmartincek/">developer</a>
+			<h2 class="text-base text-title underline hover:text-primary transition duration-300">
+				<a href="https://github.com/lmartincek/" target="_blank">developer</a>
 			</h2>
 			<div class="mt-1.5 h-1 w-1 rounded bg-title"></div>
-			<h2 class="text-base text-title hover:text-primary transition duration-300">
-				<a href="https://nomadmania.com/profile/45835/nm/un/by/2025">traveller</a>
+			<h2 class="text-base text-title underline hover:text-primary transition duration-300">
+				<a href="https://nomadmania.com/profile/45835/nm/un/by/2025" target="_blank">traveller</a>
 			</h2>
 			<div class="mt-1.5 h-1 w-1 rounded bg-title"></div>
 			<h2 class="text-base text-title">photographer</h2>

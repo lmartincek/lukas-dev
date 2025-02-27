@@ -23,7 +23,7 @@ const { title, maxBodyWidth } = Astro.props;
 	<meta name="viewport" content="width=device-width" />
 
 	<Metadata
-		title="Lukas Martincek"
+		title={title}
 		description="A minimal personal portfolio website made with Astro, React and Tailwind CSS"
 		image={`${import.meta.env.SITE}/og.png`}
 		canonicalUrl={import.meta.env.SITE}
