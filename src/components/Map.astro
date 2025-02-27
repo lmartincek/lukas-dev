@@ -1,5 +1,7 @@
 ---
 import { locations } from "../constants/locations.ts";
+
+const apiKey = import.meta.env.PUBLIC_GOOGLE_API_KEY
 ---
 <!-- TODO- reconsider rewriting to react component -->
 
@@ -14,9 +16,18 @@ import { locations } from "../constants/locations.ts";
 <section class="pt-8">
     <h2 class="font-medium tracking-tight text-title">Map</h2>
     <div class="pt-1.5">
-        <div id="map" class="h-96 w-full"></div>
+        <div id="map" class="h-[500px] w-full"></div>
     </div>
 </section>
+
+<script is:inline define:vars={{apiKey}}>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+        key: apiKey,
+        v: "weekly",
+        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+        // Add other bootstrap parameters as needed, using camel case.
+    });
+</script>
 
 <script type="module" define:vars={{locations}}>
 function getContent(title, year, photos) {
@@ -55,6 +66,8 @@ async function initMap() {
         fullscreenControl: false,
         streetViewControl: false,
         mapTypeControl: false,
+        cameraControl: false,
+        zoomControl: true,
     });
 
     const closeBtn = document.getElementById('close-overlay')
@@ -69,18 +82,19 @@ async function initMap() {
 
         // Create the markers.
         locations.forEach(({ title, year, position, photos }) => {
-            const beachFlagImg = document.createElement('img');
-            beachFlagImg.src = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-            beachFlagImg.ariaLabel = `marker-${title}`
+            const markerPin = document.createElement('img');
+            markerPin.src = '/backpacker.svg';
+            markerPin.className = 'w-7 h-7 rounded-xl';
+            markerPin.ariaLabel = `marker-${title}`;
 
             const marker = new AdvancedMarkerElement({
                 position,
                 map,
-                content: beachFlagImg,
+                content: markerPin,
             });
 
             // Add a click listener for each marker, and set up the info window.
-            marker.addListener('click', () => {
+            marker.addListener('gmp-click', () => {
                 mapContent.innerHTML = getContent(title, year, photos)
                 mapOverlay.style.display = "flex"
             });

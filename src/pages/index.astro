@@ -10,12 +10,14 @@ import socialsData from "../constants/socials.json";
 
 const projects = projectsData;
 const socials = socialsData;
+
+const title = 'Lukas Martincek'
 ---
 
-<Layout title="Lukas Martincek">
+<Layout title={title} maxContainerWidth="850">
 	<main>
 		<h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
-			Lukas Martincek
+			{title}
 		</h1>
 		<div class="flex items-center gap-1.5 font-medium tracking-tight">
 			<h2 class="text-base text-title hover:text-primary transition duration-300">

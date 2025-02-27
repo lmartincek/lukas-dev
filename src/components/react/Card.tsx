@@ -7,7 +7,7 @@ interface Project {
     title: string;
     description: string;
     link: string;
-    tag?: string;
+    tags?: string[];
 }
 
 interface ProjectCardProps {
@@ -15,6 +15,12 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
+    const colors = [
+        "bg-emerald-100 text-emerald-700 border-emerald-700",
+        "bg-yellow-100 text-yellow-700 border-yellow-700",
+        "bg-orange-100 text-orange-700 border-orange-700",
+    ];
+
     return (
         <div className="flex flex-col items-start pt-2">
             <a
@@ -23,13 +29,18 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
                 rel="noreferrer"
                 className="group relative -mx-3 w-full transform rounded-lg px-3 py-2 transition-all duration-300 ease-in-out md:hover:scale-105 md:hover:bg-hoverColor">
                 <div className="flex items-center justify-between text-sm font-medium tracking-tight text-title md:group-hover:text-primary">
-                    <div className="flex items-center">
+                    <div className="flex flex-wrap items-center">
                         <h3>{project.title}</h3>
-                        {project.tag && (
-                            <div className="ml-2 rounded-full border border-emerald-700 bg-emerald-100 px-1.5 py-0.5 text-xs font-medium text-emerald-700">
-                                <span>{project.tag}</span>
-                            </div>
-                        )}
+                        {project.tags && project.tags.map((tag, index) =>
+                                (
+                                    <div
+                                        key={index}
+                                        className={`ml-2 rounded-full border px-1.5 py-0.5 text-xs font-medium ${colors[index % colors.length]}`}
+                                    >
+                                        <span>{tag}</span>
+                                    </div>
+                                )
+                            )}
                     </div>
                     <RiArrowRightUpLine className="ml-0.5 text-primary opacity-0 transition-opacity duration-150 md:group-hover:opacity-100" />
                 </div>
