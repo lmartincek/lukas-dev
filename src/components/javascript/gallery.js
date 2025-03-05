@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="gallery-close absolute top-3 right-3 z-10 text-white text-opacity-75 text-lg transition duration-300 ease-in-out hover:text-opacity-100">✕</button>
       </div>
       <div class="relative flex items-center">
-        <button class="prev absolute left-4 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">◀</button>
+        <button class="prev py-10 pl-4 pr-10 absolute left-0 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">◀</button>
             <img src="" alt="" class="max-w-screen max-h-screen object-contain">
-        <button class="next absolute right-4 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">▶</button>
+        <button class="next py-10 pr-4 pl-10 absolute right-0 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">▶</button>
       </div>
       <div class="gallery-footer -bottom-12 sm:bottom-0 absolute w-full h-[50px] sm:bg-black sm:bg-opacity-40 z-20">
         <span class="img-caption absolute top-3 z-10 text-white text-lg text-center w-full m-0"></span>
