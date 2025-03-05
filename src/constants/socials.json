@@ -1,27 +1,20 @@
 [
   {
     "id": 1,
-    "name": "resume",
-    "url": "/resume",
-    "target": "_self",
-    "icon": "resume"
-  },
-  {
-    "id": 2,
     "name": "linkedin",
     "url": "https://www.linkedin.com/in/lukasmartincek/",
     "target": "_blank",
     "icon": "linkedin"
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "github",
     "url": "https://github.com/lmartincek",
     "target": "_blank",
     "icon": "github"
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "email",
     "url": "mailto:lukas.martincek3@gmail.com",
     "target": "_blank",

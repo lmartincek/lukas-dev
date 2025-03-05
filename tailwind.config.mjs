@@ -1,4 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+const plugin = require("tailwindcss/plugin")
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -20,7 +21,23 @@ export default {
     },
     safelist: [
         'md:max-w-[850px]',
+        'md:max-w-[950px]',
         'md:max-w-[1100px]',
     ],
-    plugins: [require("@tailwindcss/typography")],
+    plugins: [
+        require("@tailwindcss/typography"),
+        plugin(({ addUtilities }) => {
+            addUtilities({
+                /* Chrome, Safari and Opera */
+                ".scrollbar-hidden::-webkit-scrollbar": {
+                    display: "none",
+                },
+
+                ".scrollbar-hidden": {
+                    "scrollbar-width": "none" /* Firefox */,
+                    "-ms-overflow-style": "none" /* IE and Edge */,
+                },
+            })
+        }),
+    ],
 };

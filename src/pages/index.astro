@@ -13,7 +13,9 @@ const projects = projectsData;
 const socials = socialsData;
 ---
 
-<Layout title={author} maxBodyWidth="md:max-w-[850px]">
+<Layout title={author}
+		description="My personal portfolio, built with Tailwind CSS, React and Astro"
+		maxBodyWidth="md:max-w-[850px]">
 	<main>
 		<h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
 			{author}
@@ -55,7 +57,7 @@ const socials = socialsData;
 		</div>
 
 		<section class="pt-8">
-			<h2 class="font-medium tracking-tight text-title">Projects</h2>
+			<h2 class="font-medium tracking-tight text-title">Recently created</h2>
 			<div class="pt-1.5">
 				{
 					projects.map((project) => (

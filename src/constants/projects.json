@@ -2,9 +2,17 @@
   {
     "id": 1,
     "title": "CostlyAI",
-    "tags": ["Tech", "New!"],
+    "tags": ["Tech", "Node.js", "Vue.js"],
+    "target": "_blank",
     "description": "AI model to show travelers and potential residents with a list of essential groceries and typical expenses in day to day life, helping them better understand the local cost of living",
     "link": "https://github.com/lmartincek/CostlyAI"
+  },
+  {
+    "id": 3,
+    "title": "8 months in Latin America",
+    "tags": ["Travel", "Writing"],
+    "description": "5000 words displaying my 8-month long journey across Latin America, blending adventure, challenges, and self-discovery. Created to share raw experiences beyond typical travel blogs.",
+    "link": "/8-months-in-latin-america/"
   },
   {
     "id": 2,
@@ -12,17 +20,5 @@
     "tags": ["Travel"],
     "description": "A map of the places that have left their mark on my life",
     "link": "/finding-home/"
-  },
-  {
-    "id": 2,
-    "title": "title template",
-    "description": "description template",
-    "link": "https://vercel.com/lmartincek/"
-  },
-  {
-    "id": 5,
-    "title": "title template",
-    "description": "description template",
-    "link": "https://vercel.com/lmartincek/"
   }
 ]

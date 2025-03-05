@@ -4,27 +4,24 @@ import Footer from "../components/Footer.astro";
 import Metadata from "../components/Metadata.astro";
 import Nav from "../components/Nav.astro";
 
-type maxBodyWidth = 'md:max-w-[1100px]' | 'md:max-w-[850px]'
+type maxBodyWidth = 'md:max-w-[1100px]' | 'md:max-w-[850px]' | 'md:max-w-[950px]'
 interface Props {
 	title: string;
+	description: string;
 	maxBodyWidth: maxBodyWidth;
 }
-const { title, maxBodyWidth } = Astro.props;
+const { title, description, maxBodyWidth  } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="bg-bgColor">
 <head>
 	<meta charset="UTF-8" />
-	<meta
-		name="description"
-		content="A minimal personal portfolio website made with Astro, React and Tailwind CSS"
-	/>
 	<meta name="viewport" content="width=device-width" />
 
 	<Metadata
 		title={title}
-		description="A minimal personal portfolio website made with Astro, React and Tailwind CSS"
+		description={description}
 		image={`${import.meta.env.SITE}/og.png`}
 		canonicalUrl={import.meta.env.SITE}
 		type="website"

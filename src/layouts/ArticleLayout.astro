@@ -1,0 +1,21 @@
+---
+import Layout from "./Layout.astro";
+import '../assets/articleStyles.css'
+
+interface Props {
+    description: string,
+    title: string,
+}
+
+const { description, title } = Astro.props
+---
+
+<Layout title={title}
+        description={description}
+        maxBodyWidth="md:max-w-[950px]">
+    <slot/>
+
+    <script>
+        import "../components/javascript/gallery.js"
+    </script>
+</Layout>

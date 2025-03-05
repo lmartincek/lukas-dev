@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+interface Props {
+    images: {
+        src: string,
+        alt: string,
+    }[]
+}
+
+const  { images } = Astro.props
+const count = images.length
+---
+
+<div class="carousel-wrapper my-8">
+    <div class="carousel flex gap-2 overflow-x-auto snap-x scrollbar-hidden">
+        {images && images.map(({src, alt}) => (
+            <Image
+                    class="carousel-image h-[300px] md:h-[350px] mx-auto cursor-pointer snap-center"
+                    src={src}
+                    alt={alt}
+                    width={1200}
+                    height={800}
+            />
+        ))}
+    </div>
+
+    <div class="text-center italic">
+        <p class="mt-4 -mb-2">{count} photos</p>
+        <slot/>
+    </div>
+</div>

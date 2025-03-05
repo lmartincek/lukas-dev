@@ -7,6 +7,7 @@ interface Project {
     title: string;
     description: string;
     link: string;
+    target?: string;
     tags?: string[];
 }
 
@@ -25,8 +26,8 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
         <div className="flex flex-col items-start pt-2">
             <a
                 href={project.link}
-                target="_blank"
-                rel="noreferrer"
+                target={project.target || ''}
+                rel={project.target === "_blank" ? "noopener noreferrer" : undefined}
                 className="group relative -mx-3 w-full transform rounded-lg px-3 py-2 transition-all duration-300 ease-in-out md:hover:scale-105 md:hover:bg-hoverColor">
                 <div className="flex items-center justify-between text-sm font-medium tracking-tight text-title md:group-hover:text-primary">
                     <div className="flex flex-wrap items-center">
