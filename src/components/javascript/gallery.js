@@ -27,6 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.appendChild(galleryModal);
 
+    galleryModal.addEventListener("click", (event) => {
+        // Close only if the clicked element is the background overlay (not the image or navigation buttons)
+        if (event.target === galleryModal.querySelector(".absolute.inset-0")) {
+            closeGallery();
+        }
+    });
+
     const closeButton = galleryModal.querySelector(".gallery-close");
     const prevButton = galleryModal.querySelector(".prev");
     const nextButton = galleryModal.querySelector(".next");

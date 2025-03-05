@@ -9,11 +9,9 @@ interface Props {
 const { src, alt } = Astro.props
 ---
 
-<div class="image-row my-8">
-    <Image class="gallery-image w-auto mx-auto cursor-pointer max-h-[450px]"
-            src={src}
-            alt={alt}
-            width={600}
-            height={450}/>
-    <p class="text-center italic">{alt}</p>
-</div>
+<Image class="gallery-image w-full mx-auto cursor-pointer max-h-[450px] mt-8"
+        src={src}
+        alt={alt}
+        width={600}
+        height={450}/>
+<p class="text-center italic mb-8">{alt}</p>

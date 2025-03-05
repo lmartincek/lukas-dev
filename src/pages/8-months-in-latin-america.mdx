@@ -1,14 +1,21 @@
 import Carousel from "../components/articles/Carousel.astro";
 import ImageWrapper from "../components/articles/ImageWrapper.astro";
 import ArticleLayout from "../layouts/ArticleLayout.astro";
+import {Image} from "astro:assets"
 
 export const title = "A Journey Through Latin America: 8 Months of Adventure, Growth, and Unexpected Lessons"
 
+[//]: # (TODO - cls placeholder na image)
 <ArticleLayout description="An article about 8 months of travelling thorugh Latin America"
-                img="/photos/my-route.webp"
+               img="/photos/my-route.webp"
                title={title}>
 <h1 className="font-serif text-center text-[2rem] tracking-tight text-primary">{title}</h1>
-    <ImageWrapper src={"/photos/my-route.webp"} alt={"Latin America and the way I crossed"}/>
+    <Image class="gallery-image w-[350px] h-[380px] mx-auto cursor-pointer mt-8"
+           src={"/photos/my-route.webp"}
+           alt={"Latin America and the way I crossed"}
+           width={375}
+           height={400}/>
+    <p className="text-center italic mb-8">Latin America and the way I crossed</p>
     ___
     ## 1. DECIDING TO QUIT MY JOB
     In February 2024, I started thinking about resigning. I was working for a medium-sized company based in Slovakia,
