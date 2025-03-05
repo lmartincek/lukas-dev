@@ -9,8 +9,9 @@ interface Props {
 	title: string;
 	description: string;
 	maxBodyWidth: maxBodyWidth;
+	img?: string;
 }
-const { title, description, maxBodyWidth  } = Astro.props;
+const { title, description, img= "/public/og.png", maxBodyWidth  } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,11 +23,11 @@ const { title, description, maxBodyWidth  } = Astro.props;
 	<Metadata
 		title={title}
 		description={description}
-		image={`${import.meta.env.SITE}/og.png`}
+		image={img}
 		canonicalUrl={import.meta.env.SITE}
 		type="website"
 	/>
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 	<meta name="generator" content={Astro.generator} />
 	<title>{title}</title>
 	<AstroFont

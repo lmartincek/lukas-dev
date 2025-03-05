@@ -5,13 +5,15 @@ import '../assets/articleStyles.css'
 interface Props {
     description: string,
     title: string,
+    img: string,
 }
 
-const { description, title } = Astro.props
+const { description, title, img } = Astro.props
 ---
 
 <Layout title={title}
         description={description}
+        img={img}
         maxBodyWidth="md:max-w-[950px]">
     <slot/>
 
