@@ -11,7 +11,7 @@ interface Props {
 	maxBodyWidth: maxBodyWidth;
 	img?: string;
 }
-const { title, description, img = "/public/og.png", maxBodyWidth  } = Astro.props;
+const { title, description, img = "/og.png", maxBodyWidth  } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +20,7 @@ const { title, description, img = "/public/og.png", maxBodyWidth  } = Astro.prop
 	<!-- Google tag (gtag.js) -->
 	<script type="text/partytown"
 			is:inline
-			src=`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GOOGLE_GA_4_ID}`></script>
+			src=`https://www.googletagmanager.com/gtag/js?id=G-Z8L4Y2TN0L`></script>
 	<script type="text/partytown"
 			is:inline>
 		window.dataLayer = window.dataLayer || [];
@@ -34,7 +34,7 @@ const { title, description, img = "/public/og.png", maxBodyWidth  } = Astro.prop
 			analytics_storage: "denied",
 		});
 
-		gtag('config', `${import.meta.env.PUBLIC_GOOGLE_GA_4_ID}`);
+		gtag('config', 'G-Z8L4Y2TN0L');
 	</script>
 
 	<meta charset="UTF-8" />
@@ -47,7 +47,7 @@ const { title, description, img = "/public/og.png", maxBodyWidth  } = Astro.prop
 		canonicalUrl={import.meta.env.SITE}
 		type="website"
 	/>
-	<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+	<link rel="icon" type='image/x-icon' href="/favicon.ico" />
 	<meta name="generator" content={Astro.generator} />
 	<title>{title}</title>
 	<AstroFont
