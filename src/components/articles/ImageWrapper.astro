@@ -31,17 +31,14 @@ const aspectRatioClasses = {
 const isPortrait = aspectRatio === ASPECT_RATIOS.PORTRAIT;
 ---
 
-<div class={`relative w-full mx-auto my-8 ${aspectRatioClasses[aspectRatio]} 
-                ${isPortrait ? 'max-w-[350px]' : 'max-w-[550px]'}`}>
-    <div class={`relative w-full mx-auto ${aspectRatioClasses[aspectRatio]}`}>
-        <Image
-                class={`gallery-image cursor-pointer w-full h-auto object-cover shadow-md mx-auto
-                  ${isPortrait ? 'max-w-[350px]' : 'max-w-[550px]'}`}
-                src={src}
-                alt={alt}
-                width={width}
-                height={height}
-        />
-    </div>
-    <p class="text-center italic">{alt}</p>
+<div class={`relative w-full mx-auto ${aspectRatioClasses[aspectRatio]} ${isPortrait ? 'max-w-[350px]' : 'max-w-[550px]'}`}>
+    <Image
+            class={`gallery-image cursor-pointer w-full h-auto object-cover shadow-md mx-auto
+              ${isPortrait ? 'max-w-[350px]' : 'max-w-[550px]'}`}
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+    />
 </div>
+<p class="text-center italic mb-8">{alt}</p>
