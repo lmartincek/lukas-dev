@@ -1,5 +1,5 @@
 ---
-import {author} from "../constants/general";
+import {AUTHOR} from "../constants/general";
 interface Props {
     title: string;
     description: string;
@@ -16,7 +16,7 @@ const { title, description, image, canonicalUrl, type, publishedTime } =
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="language" content="en" />
-<meta name="author" content={author} />
+<meta name="author" content={AUTHOR} />
 <meta name="robots" content="index, follow" />
 <meta name="description" content={description} />
 {
