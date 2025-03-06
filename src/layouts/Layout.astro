@@ -18,13 +18,23 @@ const { title, description, img = "/public/og.png", maxBodyWidth  } = Astro.prop
 <html lang="en" class="bg-bgColor">
 <head>
 	<!-- Google tag (gtag.js) -->
-	<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-Z8L4Y2TN0L"></script>
-	<script type="text/partytown">
+	<script type="text/partytown"
+			is:inline
+			src=`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GOOGLE_GA_4_ID}`></script>
+	<script type="text/partytown"
+			is:inline>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag('config', 'G-Z8L4Y2TN0L');
+		gtag("consent", "default", {
+			ad_storage: "denied",
+			ad_user_data: "denied",
+			ad_personalization: "denied",
+			analytics_storage: "denied",
+		});
+
+		gtag('config', `${import.meta.env.PUBLIC_GOOGLE_GA_4_ID}`);
 	</script>
 
 	<meta charset="UTF-8" />
