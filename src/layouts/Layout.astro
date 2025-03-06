@@ -20,25 +20,15 @@ const { title, description, img = "/og.png", maxBodyWidth  } = Astro.props;
 	<!-- Google tag (gtag.js) -->
 	<script type="text/partytown"
 			is:inline
-			src=`https://www.googletagmanager.com/gtag/js?id=G-Z8L4Y2TN0L`></script>
+			src="https://www.googletagmanager.com/gtag/js?id=G-Z8L4Y2TN0"></script>
 	<script type="text/partytown"
 			is:inline>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag("consent", "default", {
-			ad_storage: "denied",
-			ad_user_data: "denied",
-			ad_personalization: "denied",
-			analytics_storage: "denied",
-		});
-
 		gtag('config', 'G-Z8L4Y2TN0L');
 	</script>
-
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
 
 	<Metadata
 		title={title}
@@ -48,7 +38,7 @@ const { title, description, img = "/og.png", maxBodyWidth  } = Astro.props;
 		type="website"
 	/>
 	<link rel="icon" type='image/x-icon' href="/favicon.ico" />
-	<meta name="generator" content={Astro.generator} />
+
 	<title>{title}</title>
 	<AstroFont
 		config={[

@@ -30,7 +30,7 @@ const apiKey = import.meta.env.PUBLIC_GOOGLE_API_KEY
     });
 </script>
 
-<script type="module" define:vars={{locations}}>
+<script is:inline define:vars={{locations}}>
 function getContent(title, year, photos) {
     return `
     <h3 class="text-primary text-xl">${title}</h3>
@@ -56,7 +56,6 @@ function getContent(title, year, photos) {
 `
 }
 async function initMap() {
-    // Request needed libraries.
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
@@ -81,7 +80,6 @@ async function initMap() {
             mapOverlay.style.display = "none"
         })
 
-        // Create the markers.
         locations.forEach(({ title, year, position, photos }) => {
             const markerPin = document.createElement('img');
             markerPin.src = '/backpacker.svg';
@@ -94,7 +92,6 @@ async function initMap() {
                 content: markerPin,
             });
 
-            // Add a click listener for each marker, and set up the info window.
             marker.addListener('gmp-click', () => {
                 mapContent.innerHTML = getContent(title, year, photos)
                 mapOverlay.style.display = "flex"
