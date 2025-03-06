@@ -5,15 +5,26 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
-
-//TODO - add later on
-// import sitemap from "@astrojs/sitemap";
-// import robotsTxt from "astro-robots-txt";
+import robotsTxt from "astro-robots-txt";
+import sitemap from "@astrojs/sitemap";
+import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  integrations: [react(), tailwind(), icon(), mdx()],
+  integrations: [
+    react(),
+    tailwind(),
+    icon(),
+    mdx(),
+    sitemap(),
+    robotsTxt(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 
-  site: 'https://bucolic-lamington-53a301.netlify.app/',
+  site: 'https://lmartincek.dev/',
 });

@@ -17,6 +17,16 @@ const { title, description, img = "/public/og.png", maxBodyWidth  } = Astro.prop
 <!doctype html>
 <html lang="en" class="bg-bgColor">
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-Z8L4Y2TN0L"></script>
+	<script type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-Z8L4Y2TN0L');
+	</script>
+
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 
