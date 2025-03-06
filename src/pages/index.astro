@@ -7,18 +7,18 @@ import projectsData from "../constants/projects.json";
 import ProjectCard from "../components/react/Card.tsx";
 import socialsData from "../constants/socials.json";
 
-import {author} from "../constants/general";
+import {AUTHOR} from "../constants/general";
 
 const projects = projectsData;
 const socials = socialsData;
 ---
 
-<Layout title={author}
-		description="My personal portfolio, built with Tailwind CSS, React and Astro"
+<Layout title={AUTHOR}
+		description="Personal portfolio, built with Tailwind CSS, React and Astro"
 		maxBodyWidth="md:max-w-[850px]">
 	<main>
 		<h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
-			{author}
+			{AUTHOR}
 		</h1>
 		<div class="flex items-center gap-1.5 font-medium tracking-tight">
 			<h2 class="text-base text-title underline hover:text-primary transition duration-300">
@@ -37,7 +37,7 @@ const socials = socialsData;
 			creating cool stuff, always interested in <span class="text-black">web development</span>.
 			I'm also a <span class="text-black">passionate traveller</span> and,
 			passionate about <span class="text-black">photography and design</span>, with a
-			minimalist touch. When I'm not coding, most likely researching what to do and coming up with new ideas.
+			minimalist touch.
 		</p>
 
 		<div class="w-fit grid grid-cols-3 gap-2 pt-4 tracking-tight md:flex md:flex-row md:items-start">

@@ -1,7 +1,7 @@
 ---
 import NowTime from "./react/NowTime.tsx";
 import {Icon} from "astro-icon/components";
-import {author} from "../constants/general";
+import {AUTHOR} from "../constants/general";
 ---
 
 <footer>
@@ -14,7 +14,7 @@ import {author} from "../constants/general";
     </div>
     <hr class="h-px border-0 bg-title" />
     <div class="mx-1 flex items-center justify-between pt-4 md:mx-3">
-        <span class="text-xs text-body"> &copy; 2025 {author} </span>
+        <span class="text-xs text-body"> &copy; 2025 {AUTHOR} </span>
         <NowTime client:load />
     </div>
 </footer>

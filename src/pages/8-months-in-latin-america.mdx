@@ -2,15 +2,15 @@ import Carousel from "../components/articles/Carousel.astro";
 import ImageWrapper from "../components/articles/ImageWrapper.astro";
 import ArticleLayout from "../layouts/ArticleLayout.astro";
 import {Image} from "astro:assets"
+import {ASPECT_RATIOS} from "../constants/general.js";
 
 export const title = "A Journey Through Latin America: 8 Months of Adventure, Growth, and Unexpected Lessons"
 
-[//]: # (TODO - cls placeholder na image)
-<ArticleLayout description="An article about 8 months of travelling thorugh Latin America"
+<ArticleLayout description="5000 words displaying 8 months of travelling through Latin America"
                img="/photos/my-route.webp"
                title={title}>
 <h1 className="font-serif text-center text-[2rem] tracking-tight text-primary">{title}</h1>
-    <Image class="gallery-image w-[350px] h-[380px] mx-auto cursor-pointer mt-8"
+    <Image class="gallery-image w-[350px] h-[380px] mx-auto cursor-pointer shadow-md mt-8"
            src={"/photos/my-route.webp"}
            alt={"Latin America and the way I crossed"}
            width={375}
@@ -352,7 +352,7 @@ export const title = "A Journey Through Latin America: 8 Months of Adventure, Gr
     The next seven days were spent “wild camping” in my bathroom, watching TV, and eating nothing but white rice with bananas.
     It took almost three weeks before I could eat a full meal without immediately running to the toilet.
 
-    <ImageWrapper src={"/photos/peru/after-salmonella.webp"} alt={"yeah Amazon.. I think I’ll never forget."}/>
+    <ImageWrapper src={"/photos/peru/after-salmonella.webp"} alt={"yeah Amazon.. I think I’ll never forget."} aspectRatio={ASPECT_RATIOS.PORTRAIT}/>
     ___
 
     ## 6. HIGH ALTITUDE ADVENTURE IN BOLIVIA
@@ -403,7 +403,7 @@ export const title = "A Journey Through Latin America: 8 Months of Adventure, Gr
     Luckily, a Norwegian girl and a Canadian guy (both super fit) agreed to let me join.
     **Their guide, Erwin, was 27, climbed this mountain 3-4 times a week**, and lived in a village near the lower camp.
 
-    <ImageWrapper src={"/photos/bolivia/ervin.webp"} alt={'Ervin, my new guide'}/>
+    <ImageWrapper src={"/photos/bolivia/ervin.webp"} alt={'Ervin, my new guide'} aspectRatio={ASPECT_RATIOS.PORTRAIT}/>
 
     We pushed on. The steepest section of the climb drained me completely.
 

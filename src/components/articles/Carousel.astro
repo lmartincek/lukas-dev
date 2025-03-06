@@ -15,7 +15,7 @@ const count = images.length
     <div class="carousel flex gap-2 overflow-x-auto snap-x scrollbar-hidden">
         {images && images.map(({src, alt}) => (
             <Image
-                    class="carousel-image h-[300px] md:h-[350px] mx-auto cursor-pointer snap-center"
+                    class="carousel-image h-[300px] md:h-[350px] mx-auto cursor-pointer snap-center shadow-md"
                     src={src}
                     alt={alt}
                     width={1200}

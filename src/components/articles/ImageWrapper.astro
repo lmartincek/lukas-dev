@@ -1,17 +1,47 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
+import { ASPECT_RATIOS, type AspectRatio } from "../../constants/general";
 
 interface Props {
-    src: string,
-    alt: string,
+    src: string;
+    alt: string;
+    aspectRatio?: AspectRatio;
 }
 
-const { src, alt } = Astro.props
+const { src, alt, aspectRatio: rawAspectRatio } = Astro.props;
+
+// Normalize the aspect ratio value
+const aspectRatio = (rawAspectRatio ?? ASPECT_RATIOS.LANDSCAPE).trim() as AspectRatio;
+
+// Define dimensions for Astro optimization
+const dimensions = {
+    [ASPECT_RATIOS.PORTRAIT]: { width: 300, height: 400 }, // Portrait (3:4)
+    [ASPECT_RATIOS.LANDSCAPE]: { width: 600, height: 450 }, // Landscape (4:3)
+};
+
+const { width, height } = dimensions[aspectRatio];
+
+// Define Tailwind aspect ratio classes dynamically
+const aspectRatioClasses = {
+    [ASPECT_RATIOS.PORTRAIT]: "aspect-[3/4]",
+    [ASPECT_RATIOS.LANDSCAPE]: "aspect-[4/3]",
+};
+
+// Check if the aspect ratio is portrait
+const isPortrait = aspectRatio === ASPECT_RATIOS.PORTRAIT;
 ---
 
-<Image class="gallery-image w-full mx-auto cursor-pointer max-h-[450px] mt-8"
-        src={src}
-        alt={alt}
-        width={600}
-        height={450}/>
-<p class="text-center italic mb-8">{alt}</p>
+<div class={`relative w-full mx-auto my-8 ${aspectRatioClasses[aspectRatio]} 
+                ${isPortrait ? 'max-w-[400px]' : 'max-w-full'}`}>
+    <div class={`relative w-full mx-auto ${aspectRatioClasses[aspectRatio]}`}>
+        <Image
+                class={`gallery-image cursor-pointer w-full h-auto object-cover shadow-md mx-auto
+                  ${isPortrait ? 'max-w-[400px] md:max-w-[400px]' : 'max-w-full'}`}
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+        />
+    </div>
+    <p class="text-center italic">{alt}</p>
+</div>
