@@ -1,4 +1,3 @@
-
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
@@ -8,6 +7,8 @@ import { defineConfig } from "astro/config";
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
 import partytown from '@astrojs/partytown'
+
+import compressor from "astro-compressor";
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,6 +25,7 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
+    compressor(),
   ],
 
   site: 'https://lmartincek.dev/',
