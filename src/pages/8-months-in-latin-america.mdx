@@ -4,12 +4,12 @@ import ArticleLayout from "../layouts/ArticleLayout.astro";
 import {Image} from "astro:assets"
 import {ASPECT_RATIOS} from "../constants/general.js";
 
-export const title = "A Journey Through Latin America: 8 Months of Adventure, Growth, and Unexpected Lessons"
+export const title = "5000 words displaying 8 months of travelling through Latin America"
 
 <ArticleLayout description="5000 words displaying 8 months of travelling through Latin America"
                img="/photos/my-route.webp"
                title={title}>
-<h1 className="font-serif text-center text-[2rem] tracking-tight text-primary">{title}</h1>
+<h1 className="font-serif text-center text-[2rem] md:px-8 tracking-tight text-primary">{title}</h1>
     <Image class="gallery-image w-[350px] h-[380px] mx-auto cursor-pointer shadow-md mt-8"
            src={"/photos/my-route.webp"}
            alt={"Latin America and the way I crossed"}
