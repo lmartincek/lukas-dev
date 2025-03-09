@@ -4,7 +4,7 @@
     "title": "CostlyAI",
     "tags": ["Tech", "Node.js", "Vue.js"],
     "target": "_blank",
-    "description": "AI model to show travelers and potential residents with a list of essential groceries and typical expenses in day to day life, helping them better understand the local cost of living",
+    "description": "An AI model designed to show travelers and potential residents a list of essential groceries and typical day-to-day expenses, helping to understand better the local cost of living.",
     "link": "https://github.com/lmartincek/CostlyAI"
   },
   {
@@ -18,7 +18,7 @@
     "id": 2,
     "title": "Finding home",
     "tags": ["Travel"],
-    "description": "A map of the places that have left their mark on my life",
+    "description": "A map of the places that have left their mark on my life.",
     "link": "/finding-home/"
   }
 ]
