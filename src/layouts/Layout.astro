@@ -1,6 +1,6 @@
 ---
 import { AstroFont }  from "astro-font";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions';
 
 import Footer from "../components/Footer.astro";
 import Metadata from "../components/Metadata.astro";
@@ -23,6 +23,7 @@ const mdMaxWidth = maxBodyWidth ?? 'md:max-w-[850px]' as maxBodyWidth
 <!doctype html>
 <html lang="en" class="bg-bgColor">
 <head>
+
 	<!-- Google tag (gtag.js) -->
 	<script type="text/partytown"
 			is:inline
@@ -46,6 +47,7 @@ const mdMaxWidth = maxBodyWidth ?? 'md:max-w-[850px]' as maxBodyWidth
 	<link rel="icon" type='image/x-icon' href="/favicon.ico" />
 
 	<title>{title}</title>
+	<ClientRouter/>
 	<AstroFont
 		config={[
 			{
@@ -84,6 +86,5 @@ const mdMaxWidth = maxBodyWidth ?? 'md:max-w-[850px]' as maxBodyWidth
 	<Nav />
 	<slot />
 	<Footer />
-	<ViewTransitions />
 </body>
 </html>
