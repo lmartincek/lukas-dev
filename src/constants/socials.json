@@ -19,5 +19,12 @@
     "url": "mailto:lukas.martincek3@gmail.com",
     "target": "_blank",
     "icon": "email"
+  },
+  {
+    "id": 4,
+    "name": "instagram",
+    "url": "https://www.instagram.com/freddynko/",
+    "target": "_blank",
+    "icon": "instagram"
   }
 ]

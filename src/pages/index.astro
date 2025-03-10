@@ -1,21 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
 import { PiLightbulbFill } from "react-icons/pi";
-import { RiArrowRightUpLine } from "react-icons/ri";
 import projectsData from "../constants/projects.json";
 import ProjectCard from "../components/react/Card.tsx";
-import socialsData from "../constants/socials.json";
 
 import {AUTHOR} from "../constants/general";
+import Socials from "../components/Socials.astro";
 
 const projects = projectsData;
-const socials = socialsData;
 ---
 
 <Layout title={AUTHOR}
-		description="Personal portfolio, built with Tailwind CSS, React and Astro"
-		maxBodyWidth="md:max-w-[850px]">
+		description="Personal portfolio, built with Tailwind CSS, React and Astro">
 	<main>
 		<h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
 			{AUTHOR}
@@ -38,21 +34,7 @@ const socials = socialsData;
 			When I'm not coding, you'll find me traveling, climbing mountains <span class="font-bold text-black">||</span> capturing moments through my lens.
 		</p>
 
-		<div class="w-fit grid grid-cols-3 gap-2 pt-4 tracking-tight md:flex md:flex-row md:items-start">
-			{
-				socials.map((social) => (
-					<a
-						href={social.url}
-						target={social.target}
-						rel={social.target === "_blank" ? "noopener noreferrer" : undefined}
-						class="group flex items-center underline-offset-4 transition duration-150 ease-in-out md:hover:text-primary md:hover:underline">
-						<Icon name={social.icon} size={14} class="mr-1.5" />
-						<span class="text-sm">{social.name}</span>
-						<RiArrowRightUpLine className="opacity-0 transition-opacity duration-150 md:group-hover:opacity-100" />
-					</a>
-				))
-			}
-		</div>
+		<Socials/>
 
 		<section class="pt-8">
 			<h2 class="font-medium tracking-tight text-title">Recently created</h2>
