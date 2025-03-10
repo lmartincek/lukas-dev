@@ -1,30 +1,30 @@
 [
-  {
-    "id": 1,
-    "name": "linkedin",
-    "url": "https://www.linkedin.com/in/lukasmartincek/",
-    "target": "_blank",
-    "icon": "linkedin"
-  },
-  {
-    "id": 2,
-    "name": "github",
-    "url": "https://github.com/lmartincek",
-    "target": "_blank",
-    "icon": "github"
-  },
-  {
-    "id": 3,
-    "name": "email",
-    "url": "mailto:lukas.martincek3@gmail.com",
-    "target": "_blank",
-    "icon": "email"
-  },
-  {
-    "id": 4,
-    "name": "instagram",
-    "url": "https://www.instagram.com/freddynko/",
-    "target": "_blank",
-    "icon": "instagram"
-  }
+	{
+		"id": 1,
+		"name": "linkedin",
+		"url": "https://www.linkedin.com/in/lukasmartincek/",
+		"target": "_blank",
+		"icon": "linkedin"
+	},
+	{
+		"id": 2,
+		"name": "github",
+		"url": "https://github.com/lmartincek",
+		"target": "_blank",
+		"icon": "github"
+	},
+	{
+		"id": 3,
+		"name": "email",
+		"url": "mailto:lukas.martincek3@gmail.com",
+		"target": "_blank",
+		"icon": "email"
+	},
+	{
+		"id": 4,
+		"name": "instagram",
+		"url": "https://www.instagram.com/freddynko/",
+		"target": "_blank",
+		"icon": "instagram"
+	}
 ]

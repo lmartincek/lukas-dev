@@ -3,42 +3,45 @@ import { Image } from "astro:assets";
 import { ASPECT_RATIOS, type AspectRatio } from "../../constants/general";
 
 interface Props {
-    src: string;
-    alt: string;
-    aspectRatio?: AspectRatio;
+	src: string;
+	alt: string;
+	aspectRatio?: AspectRatio;
 }
 
 const { src, alt, aspectRatio: rawAspectRatio } = Astro.props;
 
 // Normalize the aspect ratio value
-const aspectRatio = (rawAspectRatio ?? ASPECT_RATIOS.LANDSCAPE).trim() as AspectRatio;
+const aspectRatio = (
+	rawAspectRatio ?? ASPECT_RATIOS.LANDSCAPE
+).trim() as AspectRatio;
 
 // Define dimensions for Astro optimization
 const dimensions = {
-    [ASPECT_RATIOS.PORTRAIT]: { width: 300, height: 400 }, // Portrait (3:4)
-    [ASPECT_RATIOS.LANDSCAPE]: { width: 600, height: 450 }, // Landscape (4:3)
+	[ASPECT_RATIOS.PORTRAIT]: { width: 300, height: 400 }, // Portrait (3:4)
+	[ASPECT_RATIOS.LANDSCAPE]: { width: 600, height: 450 }, // Landscape (4:3)
 };
 
 const { width, height } = dimensions[aspectRatio];
 
 // Define Tailwind aspect ratio classes dynamically
 const aspectRatioClasses = {
-    [ASPECT_RATIOS.PORTRAIT]: "aspect-[3/4]",
-    [ASPECT_RATIOS.LANDSCAPE]: "aspect-[4/3]",
+	[ASPECT_RATIOS.PORTRAIT]: "aspect-[3/4]",
+	[ASPECT_RATIOS.LANDSCAPE]: "aspect-[4/3]",
 };
 
 // Check if the aspect ratio is portrait
 const isPortrait = aspectRatio === ASPECT_RATIOS.PORTRAIT;
 ---
 
-<div class={`relative w-full mx-auto ${aspectRatioClasses[aspectRatio]} ${isPortrait ? 'max-w-[350px]' : 'max-w-[550px]'}`}>
-    <Image
-            class={`gallery-image cursor-pointer w-full h-auto object-cover shadow-md mx-auto
-              ${isPortrait ? 'max-w-[350px]' : 'max-w-[550px]'}`}
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-    />
+<div
+	class={`relative w-full mx-auto ${aspectRatioClasses[aspectRatio]} ${isPortrait ? "max-w-[350px]" : "max-w-[550px]"}`}>
+	<Image
+		class={`gallery-image cursor-pointer w-full h-auto object-cover shadow-md mx-auto
+              ${isPortrait ? "max-w-[350px]" : "max-w-[550px]"}`}
+		src={src}
+		alt={alt}
+		width={width}
+		height={height}
+	/>
 </div>
-<p class="text-center italic mb-8">{alt}</p>
+<p class="mb-8 text-center italic">{alt}</p>

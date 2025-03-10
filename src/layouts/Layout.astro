@@ -1,6 +1,6 @@
 ---
-import { AstroFont }  from "astro-font";
-import { ClientRouter } from 'astro:transitions';
+import { AstroFont } from "astro-font";
+import { ClientRouter } from "astro:transitions";
 
 import Footer from "../components/Footer.astro";
 import Metadata from "../components/Metadata.astro";
@@ -8,83 +8,87 @@ import Nav from "../components/Nav.astro";
 
 const currentURL = Astro.url.href;
 
-type maxBodyWidth = 'md:max-w-[1100px]' | 'md:max-w-[850px]' | 'md:max-w-[950px]'
+type maxBodyWidth =
+	| "md:max-w-[1100px]"
+	| "md:max-w-[850px]"
+	| "md:max-w-[950px]";
 interface Props {
 	title: string;
 	description: string;
 	maxBodyWidth?: maxBodyWidth;
 	img?: string;
 }
-const { title, description, img = "/og.png", maxBodyWidth  } = Astro.props;
+const { title, description, img = "/og.png", maxBodyWidth } = Astro.props;
 
-const mdMaxWidth = maxBodyWidth ?? 'md:max-w-[850px]' as maxBodyWidth
+const mdMaxWidth = maxBodyWidth ?? ("md:max-w-[850px]" as maxBodyWidth);
 ---
 
 <!doctype html>
 <html lang="en" class="bg-bgColor">
-<head>
-
-	<!-- Google tag (gtag.js) -->
-	<script type="text/partytown"
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			type="text/partytown"
 			is:inline
 			src="https://www.googletagmanager.com/gtag/js?id=G-Z8L4Y2TN0"></script>
-	<script type="text/partytown"
-			is:inline>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		<script type="text/partytown" is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-		gtag('config', 'G-Z8L4Y2TN0L');
-	</script>
+			gtag("config", "G-Z8L4Y2TN0L");
+		</script>
 
-	<Metadata
-		title={title}
-		description={description}
-		image={img}
-		canonicalUrl={`${currentURL}`}
-		type="website"
-	/>
-	<link rel="icon" type='image/x-icon' href="/favicon.ico" />
+		<Metadata
+			title={title}
+			description={description}
+			image={img}
+			canonicalUrl={`${currentURL}`}
+			type="website"
+		/>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-	<title>{title}</title>
-	<ClientRouter/>
-	<AstroFont
-		config={[
-			{
-				name: "Satoshi",
-				src: [
-					{
-						style: "normal",
-						weight: "400 500 600 700 800 900",
-						path: "./public/fonts/Satoshi-Variable.woff2",
-					},
-				],
-				preload: true,
-				display: "swap",
-				selector: "body",
-				fallback: "sans-serif",
-			},
-			{
-				name: "Instrument-Serif",
-				src: [
-					{
-						style: "normal",
-						weight: "400",
-						path: "./public/fonts/InstrumentSerif-Regular.ttf",
-					},
-				],
-				preload: true,
-				display: "swap",
-				selector: "body",
-				fallback: "serif",
-			},
-		]}
-	/>
-</head>
-<body
-	class=`mx-auto my-8 max-w-[400px] px-4 font-sans text-body selection:bg-primary selection:text-hoverColor md:my-16 md:px-36 ${mdMaxWidth}`>
-	<Nav />
-	<slot />
-	<Footer />
-</body>
+		<title>{title}</title>
+		<ClientRouter />
+		<AstroFont
+			config={[
+				{
+					name: "Satoshi",
+					src: [
+						{
+							style: "normal",
+							weight: "400 500 600 700 800 900",
+							path: "./public/fonts/Satoshi-Variable.woff2",
+						},
+					],
+					preload: true,
+					display: "swap",
+					selector: "body",
+					fallback: "sans-serif",
+				},
+				{
+					name: "Instrument-Serif",
+					src: [
+						{
+							style: "normal",
+							weight: "400",
+							path: "./public/fonts/InstrumentSerif-Regular.ttf",
+						},
+					],
+					preload: true,
+					display: "swap",
+					selector: "body",
+					fallback: "serif",
+				},
+			]}
+		/>
+	</head>
+	<body
+		class=`mx-auto my-8 max-w-[400px] px-4 font-sans text-body selection:bg-primary selection:text-hoverColor md:my-16 md:px-36 ${mdMaxWidth}`>
+		<Nav />
+		<slot />
+		<Footer />
+	</body>
 </html>

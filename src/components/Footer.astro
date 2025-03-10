@@ -1,20 +1,16 @@
 ---
 import NowTime from "./react/NowTime.tsx";
-import {Icon} from "astro-icon/components";
-import {AUTHOR} from "../constants/general";
+import { Icon } from "astro-icon/components";
+import { AUTHOR } from "../constants/general";
 ---
 
 <footer>
-    <div class="flex w-full items-center justify-center pt-6 -mb-6">
-        <Icon
-                name="signature"
-                width={400}
-                height={150}
-        />
-    </div>
-    <hr class="h-px border-0 bg-title" />
-    <div class="mx-1 flex items-center justify-between pt-4 md:mx-3">
-        <span class="text-xs text-body"> &copy; 2025 {AUTHOR} </span>
-        <NowTime client:load />
-    </div>
+	<div class="-mb-6 flex w-full items-center justify-center pt-6">
+		<Icon name="signature" width={400} height={150} />
+	</div>
+	<hr class="h-px border-0 bg-title" />
+	<div class="mx-1 flex items-center justify-between pt-4 md:mx-3">
+		<span class="text-xs text-body"> &copy; 2025 {AUTHOR} </span>
+		<NowTime client:load />
+	</div>
 </footer>
