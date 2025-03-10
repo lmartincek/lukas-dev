@@ -1,24 +1,24 @@
 [
-  {
-    "id": 1,
-    "title": "CostlyAI",
-    "tags": ["Tech", "Node.js", "Vue.js"],
-    "target": "_blank",
-    "description": "An AI model designed to show travelers and potential residents a list of essential groceries and typical day-to-day expenses, helping to understand better the local cost of living.",
-    "link": "https://github.com/lmartincek/CostlyAI"
-  },
-  {
-    "id": 3,
-    "title": "8 months in Latin America",
-    "tags": ["Travel", "Writing"],
-    "description": "5000 words displaying my 8-month long journey across Latin America, blending adventure, challenges, and self-discovery. Created to share raw experiences beyond typical travel blogs.",
-    "link": "/8-months-in-latin-america/"
-  },
-  {
-    "id": 2,
-    "title": "Finding home",
-    "tags": ["Travel"],
-    "description": "A map of the places that have left their mark on my life.",
-    "link": "/finding-home/"
-  }
+	{
+		"id": 1,
+		"title": "CostlyAI",
+		"tags": ["Tech", "Node.js", "Vue.js"],
+		"target": "_blank",
+		"description": "An AI model designed to show travelers and potential residents a list of essential groceries and typical day-to-day expenses, helping to understand better the local cost of living.",
+		"link": "https://github.com/lmartincek/CostlyAI"
+	},
+	{
+		"id": 3,
+		"title": "8 months in Latin America",
+		"tags": ["Travel", "Writing"],
+		"description": "5000 words displaying my 8-month long journey across Latin America, blending adventure, challenges, and self-discovery. Created to share raw experiences beyond typical travel blogs.",
+		"link": "/8-months-in-latin-america/"
+	},
+	{
+		"id": 2,
+		"title": "Finding home",
+		"tags": ["Travel"],
+		"description": "A map of the places that have left their mark on my life.",
+		"link": "/finding-home/"
+	}
 ]

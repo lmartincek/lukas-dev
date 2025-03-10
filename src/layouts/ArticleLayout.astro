@@ -1,23 +1,24 @@
 ---
 import Layout from "./Layout.astro";
-import '../assets/articleStyles.css'
+import "../assets/articleStyles.css";
 
 interface Props {
-    description: string,
-    title: string,
-    img: string,
+	description: string;
+	title: string;
+	img: string;
 }
 
-const { description, title, img } = Astro.props
+const { description, title, img } = Astro.props;
 ---
 
-<Layout title={title}
-        description={description}
-        img={img}
-        maxBodyWidth="md:max-w-[950px]">
-    <slot/>
+<Layout
+	title={title}
+	description={description}
+	img={img}
+	maxBodyWidth="md:max-w-[950px]">
+	<slot />
 
-    <script>
-        import "../components/javascript/gallery.js"
-    </script>
+	<script>
+		import "../components/javascript/gallery.js";
+	</script>
 </Layout>

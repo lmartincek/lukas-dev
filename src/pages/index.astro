@@ -4,37 +4,48 @@ import { PiLightbulbFill } from "react-icons/pi";
 import projectsData from "../constants/projects.json";
 import ProjectCard from "../components/react/Card.tsx";
 
-import {AUTHOR} from "../constants/general";
+import { AUTHOR } from "../constants/general";
 import Socials from "../components/Socials.astro";
 
 const projects = projectsData;
 ---
 
-<Layout title={AUTHOR}
-		description="Personal portfolio, built with Tailwind CSS, React and Astro">
+<Layout
+	title={AUTHOR}
+	description="Personal portfolio, built with Tailwind CSS, React and Astro">
 	<main>
 		<h1 class="font-serif text-[2.5rem] tracking-tight text-primary">
 			{AUTHOR}
 		</h1>
 		<div class="flex items-center gap-1.5 font-medium tracking-tight">
-			<h2 class="text-base text-title underline hover:text-primary transition duration-300">
+			<h2
+				class="text-base text-title underline transition duration-300 hover:text-primary">
 				<a href="https://github.com/lmartincek/" target="_blank">developer</a>
 			</h2>
 			<div class="mt-1.5 h-1 w-1 rounded bg-title"></div>
-			<h2 class="text-base text-title underline hover:text-primary transition duration-300">
-				<a href="https://nomadmania.com/profile/45835/nm/un/by/2025" target="_blank">traveller</a>
+			<h2
+				class="text-base text-title underline transition duration-300 hover:text-primary">
+				<a
+					href="https://nomadmania.com/profile/45835/nm/un/by/2025"
+					target="_blank">traveller</a
+				>
 			</h2>
 			<div class="mt-1.5 h-1 w-1 rounded bg-title"></div>
 			<h2 class="text-base text-title">photographer</h2>
 		</div>
 
 		<p class="pt-4 text-sm">
-			<span class="text-black">Hi there 👋, I’m Lukas, a 28 y/o frontend developer.</span><br>
-			The last couple of years I've spent honing my skills in <span class="text-black">web development</span>; creating and learning cool stuff.
-			When I'm not coding, you'll find me traveling, climbing mountains <span class="font-bold text-black">||</span> capturing moments through my lens.
+			<span class="text-black"
+				>Hi there 👋, I’m Lukas, a 28 y/o frontend developer.</span
+			><br />
+			The last couple of years I've spent honing my skills in <span
+				class="text-black">web development</span
+			>; creating and learning cool stuff. When I'm not coding, you'll find me
+			traveling, climbing mountains <span class="font-bold text-black">||</span>
+			capturing moments through my lens.
 		</p>
 
-		<Socials/>
+		<Socials />
 
 		<section class="pt-8">
 			<h2 class="font-medium tracking-tight text-title">Recently created</h2>
@@ -46,7 +57,8 @@ const projects = projectsData;
 				}
 			</div>
 			<div class="group">
-				<p class="mt-4 w-fit rounded-md border border-body/20 bg-hoverColor/60 px-2 py-1 text-xs text-body transition-all duration-300 ease-in-out">
+				<p
+					class="mt-4 w-fit rounded-md border border-body/20 bg-hoverColor/60 px-2 py-1 text-xs text-body transition-all duration-300 ease-in-out">
 					<PiLightbulbFill
 						className="-mt-0.5 inline-block transition-all duration-300 ease-in-out md:group-hover:text-primary"
 					/>
@@ -56,7 +68,7 @@ const projects = projectsData;
 						rel="noopenner noreferrer"
 						target="_blank"
 						class="font-medium text-body underline underline-offset-2 transition-all duration-150 ease-in-out md:hover:text-primary md:group-hover:text-primary"
-					>GitHub</a
+						>GitHub</a
 					>.
 				</p>
 			</div>

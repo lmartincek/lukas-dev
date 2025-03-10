@@ -1,24 +1,25 @@
 ---
-import {Icon} from "astro-icon/components";
-import {RiArrowRightUpLine} from "react-icons/ri";
+import { Icon } from "astro-icon/components";
+import { RiArrowRightUpLine } from "react-icons/ri";
 
 import socialsData from "../constants/socials.json";
 
 const socials = socialsData;
 ---
 
-<div class="w-fit grid grid-cols-3 gap-2 pt-4 tracking-tight md:flex md:flex-row md:items-start">
-{
-    socials.map((social) => (
-    <a
-            href={social.url}
-            target={social.target}
-            rel={social.target === "_blank" ? "noopener noreferrer" : undefined}
-            class="group flex items-center underline-offset-4 transition duration-150 ease-in-out md:hover:text-primary md:hover:underline">
-        <Icon name={social.icon} size={14} class="mr-1.5" />
-        <span class="text-sm">{social.name}</span>
-        <RiArrowRightUpLine className="opacity-0 transition-opacity duration-150 md:group-hover:opacity-100" />
-    </a>
-    ))
-}
+<div
+	class="grid w-fit grid-cols-3 gap-2 pt-4 tracking-tight md:flex md:flex-row md:items-start">
+	{
+		socials.map((social) => (
+			<a
+				href={social.url}
+				target={social.target}
+				rel={social.target === "_blank" ? "noopener noreferrer" : undefined}
+				class="group flex items-center underline-offset-4 transition duration-150 ease-in-out md:hover:text-primary md:hover:underline">
+				<Icon name={social.icon} size={14} class="mr-1.5" />
+				<span class="text-sm">{social.name}</span>
+				<RiArrowRightUpLine className="opacity-0 transition-opacity duration-150 md:group-hover:opacity-100" />
+			</a>
+		))
+	}
 </div>
