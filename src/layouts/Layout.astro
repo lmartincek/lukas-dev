@@ -1,6 +1,5 @@
 ---
 import { AstroFont } from "astro-font";
-import { ClientRouter } from "astro:transitions";
 
 import Footer from "../components/Footer.astro";
 import Metadata from "../components/Metadata.astro";
@@ -51,7 +50,6 @@ const mdMaxWidth = maxBodyWidth ?? ("md:max-w-[850px]" as maxBodyWidth);
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 		<title>{title}</title>
-		<ClientRouter />
 		<AstroFont
 			config={[
 				{
