@@ -1,5 +1,4 @@
 <h1 align="center">lmartincek.dev</h1>
-<hr>
 
 <p align="center"><strong>My personal portfolio, built with:</strong></p>
 <p align="center">
