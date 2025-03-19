@@ -2,7 +2,7 @@
 const currentPath = Astro.url.pathname;
 const isHomePage = currentPath === "/";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
-import { IoMdGlobe } from "react-icons/io";
+import { TbBook } from "react-icons/tb";
 ---
 
 <nav class="flex items-center justify-between pb-4 tracking-tight">
@@ -27,13 +27,19 @@ import { IoMdGlobe } from "react-icons/io";
 			)
 		}
 	</div>
-	<div class="flex items-center gap-2">
-		<a
-			href="/finding-home"
-			target="_self"
-			class="underline-offset-4 transition duration-150 ease-in-out hover:text-primary hover:underline">
-			<IoMdGlobe className="-mt-1 inline-block" />
-			finding home
-		</a>
-	</div>
+	{
+		isHomePage ? (
+			<div class="flex items-center gap-2">
+				<TbBook className="inline-block" size="1.25em" />-
+				<a
+					href="/8-months-in-latin-america"
+					target="_self"
+					class="underline-offset-4 transition duration-150 ease-in-out hover:text-primary hover:underline">
+					something to read
+				</a>
+			</div>
+		) : (
+			""
+		)
+	}
 </nav>

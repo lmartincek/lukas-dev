@@ -1,7 +1,6 @@
 <h1 align="center">lmartincek.dev</h1>
 
 <p align="center"><strong>My personal portfolio, built with:</strong></p>
-<p align="center">
 
 <img src ="https://img.shields.io/badge/Astro-BC52EE.svg?style=for-the-badge&logo=Astro&logoColor=white">
 <img src ="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black">

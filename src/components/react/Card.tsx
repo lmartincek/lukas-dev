@@ -19,6 +19,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 		"bg-emerald-100 text-emerald-700 border-emerald-700",
 		"bg-yellow-100 text-yellow-700 border-yellow-700",
 		"bg-orange-100 text-orange-700 border-orange-700",
+		"text-black-700 border-slate-700",
 	];
 
 	return (
