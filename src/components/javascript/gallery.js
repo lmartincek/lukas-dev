@@ -19,20 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	galleryModal.innerHTML = `
     <div class="absolute inset-0"></div>
+	<button class="prev py-24 z-20 pl-4 lg:pl-8 pr-24 absolute left-0 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">◀</button>
     <div class="relative">
       <div class="gallery-nav -top-12 sm:top-0 absolute w-full h-[50px] sm:bg-black sm:bg-opacity-40 z-20">
         <span class="gallery-counter absolute left-3 top-3 z-10 text-white text-lg m-0"></span>
         <button class="gallery-close absolute top-3 right-3 z-10 text-white text-opacity-75 text-lg transition duration-300 ease-in-out hover:text-opacity-100">✕</button>
       </div>
       <div class="relative flex items-center">
-        <button class="prev py-10 pl-4 pr-10 absolute left-0 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">◀</button>
             <img src="" alt="" class="max-w-screen max-h-screen object-contain">
-        <button class="next py-10 pr-4 pl-10 absolute right-0 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">▶</button>
       </div>
       <div class="gallery-footer -bottom-12 sm:bottom-0 absolute w-full h-[50px] sm:bg-black sm:bg-opacity-40 z-20">
-        <span class="img-caption absolute top-3 z-10 text-white text-lg text-center w-full m-0"></span>
+        <span class="img-caption px-4 absolute top-3 z-10 text-white text-lg text-center w-full m-0"></span>
       </div>
     </div>
+	<button class="next z-20 py-24 pr-4 lg:pr-8 pl-24 absolute right-0 text-white text-opacity-75 text-xl transition duration-300 ease-in-out hover:text-opacity-100">▶</button>
   `;
 
 	document.body.appendChild(galleryModal);

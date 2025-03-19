@@ -23,3 +23,7 @@ ul {
 li {
 	margin: 0.5rem 0;
 }
+
+button:focus {
+	outline: none;
+}
