@@ -4,10 +4,14 @@ import ArticleLayout from "../layouts/ArticleLayout.astro";
 import { Image } from "astro:assets";
 import { ASPECT_RATIOS } from "../constants/general.js";
 
-export const title = "8 Months in Latin America: What I Learned & Experienced";
+export const title =
+	"8 Months in Latin America: What I Learned & Experienced: Lukas Martincek.";
 
-<ArticleLayout description="From the Andes to the Amazon—learning Spanish in Guatemala, battling salmonella in the jungle and motorbiking to Machu Picchu. A journey of a lifetime."
+<ArticleLayout description="From the Andes to the Amazon—learning Spanish in Guatemala, battling salmonella in the jungle and motorbiking to Machu Picchu. A journey of a lifetime: Lukas Martincek."
                img="/photos/my-route.webp"
+               type="article"
+               author="Lukas Martincek"
+               publishedTime="2025-05-09T00:00:00Z"
                title={title}>
 <h1 className="font-serif text-center text-[2rem] md:text-[2.25rem] tracking-tight text-primary">{title}</h1>
     <Image class="gallery-image w-[350px] h-[380px] md:w-[370px] md:h-[410px] mx-auto cursor-pointer shadow-md mt-8"

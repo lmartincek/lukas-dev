@@ -6,6 +6,9 @@ interface Props {
 	description: string;
 	title: string;
 	img: string;
+	publishedTime?: string;
+	type?: "website" | "article";
+	author?: string;
 }
 
 const { description, title, img } = Astro.props;

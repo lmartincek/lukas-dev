@@ -5,7 +5,7 @@
 		"tags": ["Tech", "Node.js", "Vue.js", "Playwright"],
 		"target": "_blank",
 		"description": "An AI model designed to show travelers and potential residents a list of essential groceries and typical day-to-day expenses, helping to understand better the local cost of living.",
-		"link": "https://costlyai.xyz"
+		"link": "https://github.com/lmartincek/CostlyAI-webclient"
 	},
 	{
 		"id": 2,
@@ -13,7 +13,7 @@
 		"tags": ["Tech", "Next.js", "Tailwind"],
 		"target": "_blank",
 		"description": "A lightweight, database-free link-in-bio tool where all data is stored directly in the URL. Users can create and share a personalized bio page with social links and custom buttons without requiring backend storage.",
-		"link": "https://bio-in-link.netlify.app/"
+		"link": "https://github.com/lmartincek/link-in-bio"
 	},
 	{
 		"id": 3,
