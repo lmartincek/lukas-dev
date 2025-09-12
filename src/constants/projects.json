@@ -9,21 +9,13 @@
 	},
 	{
 		"id": 2,
-		"title": "Bio-in-Link",
-		"tags": ["Tech", "Next.js", "Tailwind"],
-		"target": "_blank",
-		"description": "A lightweight, database-free link-in-bio tool where all data is stored directly in the URL. Users can create and share a personalized bio page with social links and custom buttons without requiring backend storage.",
-		"link": "https://github.com/lmartincek/link-in-bio"
-	},
-	{
-		"id": 3,
 		"title": "8 months in Latin America",
 		"tags": ["Travel", "Writing"],
 		"description": "5000 words displaying my 8-month long journey across Latin America, blending adventure, challenges, and self-discovery. Created to share raw experiences beyond typical travel blogs.",
 		"link": "/8-months-in-latin-america/"
 	},
 	{
-		"id": 2,
+		"id": 3,
 		"title": "Finding home",
 		"tags": ["Travel"],
 		"description": "A map of the places that have left their mark on my life.",
